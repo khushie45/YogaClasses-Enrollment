@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+body {
+  font-family: Rubik;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #0dad46;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+form {
+  width: 500px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+span {
+  color: red;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 15px;
+  font-size: 15px;
+  font-family: Rubik;
+}
+
+button {
+  font-family: Rubik;
+  margin-right: 15px;
+  background-color: #333333;
+  color: white;
+  padding: 10px 15px;
+  border: 3px solid #45a049;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.5s;
+}
+
+button:hover {
+  box-shadow: 0 0 8px #45a049;
+  background-color: #45a049;
+}
+
+.submit--button {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.submit--button:after {
+  content: ">";
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.submit--button:hover {
+  padding-right: 24px;
+}
+
+.submit--button:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+
+.group-mobile-age-batch {
+  display: flex;
+  justify-content: space-between;
+}
