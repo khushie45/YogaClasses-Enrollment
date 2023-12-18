@@ -4,12 +4,12 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import formModel from "./userSchema.js";
 import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 8000;
-dotenv.config();
 
-const databaseUri = process.env.MONGODB_URI || "";
+const databaseUri = process.env.MONGODB_URI;
 mongoose.connect(databaseUri);
 
 const db = mongoose.connection;
