@@ -26,6 +26,11 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  res.send("<h1>Server is working!</h1>")
+})
+
+
 const CompletePayment = async () => {
   app.post("/paymentStatus", (req, res) => {
     const paymentStatus = req.body;
