@@ -8,6 +8,7 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #0dad46;
+  margin: 50px;
 }
 
 h1 {
@@ -92,4 +93,51 @@ button:hover {
 .group-mobile-age-batch {
   display: flex;
   justify-content: space-between;
+}
+
+.enrollment {
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.enrollment > p {
+  text-align: left;
+}
+
+.enrollment > ul {
+  padding-left: 20px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  body {
+    margin: 0;
+  }
+
+  form {
+    width: fit-content;
+    margin: 10px;
+    font-size: 12px;
+  }
+
+  input,
+  select {
+    margin-bottom: 5px;
+  }
+
+  button {
+    margin-right: 5px;
+    padding: 10px 15px;
+    border: 2px solid #45a049;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .group-mobile-age-batch {
+    flex-direction: column;
+  }
+
+  .enrollment {
+    font-size: 10px;
+  }
 }

@@ -27,8 +27,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-  res.send("<h1>Server is working!</h1>")
-})
+  res.send("<h1>Server is working!</h1>");
+});
 
 const CompletePayment = async () => {
   app.post("/paymentStatus", (req, res) => {
@@ -75,6 +75,16 @@ app.post("/submit-form", async (req, res) => {
   } catch (error) {
     console.error("Error during enrollment:", error.message);
     return res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+app.get("/all-users", async (req, res) => {
+  try {
+    const allUsers = await formModel.find();
+    res.json(allUsers);
+  } catch (error) {
+    console.error("Error retrieving all users:", error.message);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 

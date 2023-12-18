@@ -58,9 +58,9 @@ const Form = () => {
     }
 
     if (userConfirmedPayment) {
-      window.alert("Payment successful");
+      alert("Payment successful");
     } else {
-      window.alert("Payment canceled");
+      alert("Payment cancelled");
     }
   };
 
@@ -117,10 +117,17 @@ const Form = () => {
       }
 
       // Handle the success response here if needed
-      console.log("Form submitted successfully");
       console.log("Response data:", responseData);
+      const date = responseData.formData.enrollmentDate;
+      alert(
+        `Form submitted successfully. You have paid the monthly fee on ${date.slice(
+          0,
+          10
+        )}`
+      );
     } catch (error) {
       console.error("Error during form submission:", error.message);
+      alert("An error occurred while submitting the form. Please try again.");
     }
   };
 
@@ -211,6 +218,20 @@ const Form = () => {
         <button type="submit" className="submit--button">
           Submit
         </button>
+        <br />
+        <div className="enrollment">
+          <p>
+            <strong>Enrollment Requirements:</strong>
+          </p>
+          <ul>
+            <li>Age limit: 18-65.</li>
+            <li>Monthly fee: ₹500.</li>
+            <li>Pay fees every month, any time, for a month.</li>
+            <li>Four daily batches: 6-7AM, 7-8AM, 8-9AM, 5-6PM.</li>
+            <li>Participants can switch batches monthly.</li>
+            <li>Must stay in the same batch for a given month.</li>
+          </ul>
+        </div>
       </form>
     </div>
   );
