@@ -36,13 +36,16 @@ const Form = () => {
     setPaymentStatus(paymentStatus);
 
     try {
-      const response = await fetch("http://localhost:8000/paymentStatus", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ paymentStatus }),
-      });
+      const response = await fetch(
+        "https://yogaclasses-enrollment.onrender.com/paymentStatus",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ paymentStatus }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -90,13 +93,16 @@ const Form = () => {
 
     // POST method for submitting data
     try {
-      const response = await fetch("http://localhost:8000/submit-form", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://yogaclasses-enrollment.onrender.com/submit-form",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
